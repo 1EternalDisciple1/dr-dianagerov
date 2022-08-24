@@ -42,6 +42,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
       dangerouslySetInnerHTML={{ __html: props.body }}
     />
     {props.postBodyComponents}
+    <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: `{
+          "@context": "https://schema.org",
+          "@type": "Dentist",
+          "name": "Happy Smiles Dental",
+          "image": "https://res.cloudinary.com/dwipih5iz/image/upload/v1605191765/20180815_124031_1_1_3f09f8541f.jpg",
+          "@id": "",
+          "url": "https://drdianagerov.com",
+          "telephone": "(516) 354-7551",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1300 Union Turnpike, Suite 106",
+            "addressLocality": "New Hyde Park",
+            "addressRegion": "NY",
+            "postalCode": "11040",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 40.7530009,
+            "longitude": -73.69835239999999
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Monday",
+            "opens": "09:00",
+            "closes": "18:00"
+          },{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Tuesday",
+            "opens": "09:00",
+            "closes": "18:00"
+          },{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Wednesday",
+            "opens": "09:00",
+            "closes": "14:00"
+          },{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Thursday",
+            "opens": "09:00",
+            "closes": "18:00"
+          },{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Friday",
+            "opens": "09:00",
+            "closes": "14:00"
+          },{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "14:00"
+          }],
+          "sameAs": "https://www.instagram.com/drdianagerov"
+        }
+        </script>`
+      }} />
     </body>
     </html>
   )

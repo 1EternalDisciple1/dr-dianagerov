@@ -25,6 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
+      <link rel="canonical" href="https://drdianagerov.com/"/>
       {props.headComponents}
     </head>
     <body {...props.bodyAttributes}>

@@ -24,7 +24,7 @@ function SEO({ seo, location, schemaMarkup }) {
   return (
     <Helmet
       htmlAttributes={{ lang: "en" }}
-      title={`${ seo.Title } | ${ seo.Description }`}
+      title={`${ seo.Title }`}
       meta={[
         {
           name: `description`,

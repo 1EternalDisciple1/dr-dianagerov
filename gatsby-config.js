@@ -9,6 +9,14 @@ module.exports = {
     siteUrl: `https://drdianagerov.com`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.drdianagerov.com',
+        sitemap: 'https://www.drdianagerov.com/sitemap.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      },
+    },
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
@@ -91,14 +99,7 @@ module.exports = {
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://www.drdianagerov.com',
-        sitemap: 'https://www.drdianagerov.com/sitemap.xml',
-        policy: [{userAgent: '*', allow: '/'}]
-      },
-    },
+
 
     'gatsby-plugin-offline',
   ],

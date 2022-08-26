@@ -94,6 +94,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        host: 'https://www.drdianagerov.com',
+        sitemap: 'https://www.drdianagerov.com/sitemap.xml',
         policy: [{userAgent: '*', allow: '/'}]
       },
     },

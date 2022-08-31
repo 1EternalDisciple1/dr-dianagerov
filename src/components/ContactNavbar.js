@@ -55,9 +55,9 @@ const ContactNavbar = () => {
       render={data => (
         <div className="border-bottom">
           <button
+            aria-label="Popup menu"
             onClick={popupMenu}
             className="btn-menu"
-            area-label="Popup menu"
           >
             <span className="btn_dekoration_line"></span>
           </button>

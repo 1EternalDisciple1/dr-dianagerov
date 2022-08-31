@@ -4,7 +4,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 const SocialMedia = () => (
   <StaticQuery
     query={graphql`
-    query SocialMediaQuery{
+      query SocialMediaQuery {
         allStrapiContacts {
           edges {
             node {
@@ -16,28 +16,21 @@ const SocialMedia = () => (
             }
           }
         }
-    }
-`}
-    render={ data => (
+      }
+    `}
+    render={data => (
+      <div className="social-media">
+        {data.allStrapiContacts.edges[0].node.SocialMedia.map(item => (
+          <a aria-label={item.NameSocialMedia} key={item.id} href={item.Link}>
+            <span className={`icon fa fa-${item.NameSocialMedia}`}></span>
+          </a>
+        ))}
 
-        <div className="social-media">
-          {
-            data.allStrapiContacts.edges[0].node.SocialMedia.map(item => (
-              <a
-                key={item.id}
-                href={item.Link}>
-                <span className={`icon fa fa-${item.NameSocialMedia}`}></span>
-              </a>
-            ))
-          }
-
-          {/*<a href="#">*/}
-          {/*  <span className={`icon fa fa-${data.allStrapiContacts.edges[0].node.ContactNavbar.SocialMedia[0].Second_SocialMedial}`}></span>*/}
-          {/*</a>*/}
-        </div>
-
-    )
-    }
+        {/*<a href="#">*/}
+        {/*  <span className={`icon fa fa-${data.allStrapiContacts.edges[0].node.ContactNavbar.SocialMedia[0].Second_SocialMedial}`}></span>*/}
+        {/*</a>*/}
+      </div>
+    )}
   />
 )
 

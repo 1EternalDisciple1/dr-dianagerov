@@ -15,7 +15,6 @@ const TeamDr = ({ data }) => {
   const content = data.strapiTeams.Content || null;
   return(
     <Layout>
-
       <section className="section-testimonial">
         <div className="container row">
           <div className="heading-pages">

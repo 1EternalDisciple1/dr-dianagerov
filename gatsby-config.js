@@ -8,19 +8,20 @@ module.exports = {
     image:
       "/static/5b94ac94748251ef31e4653d1182bdfb/513be/38fdb1270428cd7f3fc415c1559e1101.jpg",
     twitterUsername: "@occlumency",
-    siteUrl: `https://drdianagerov.com`,
+    siteUrl: "https://drdianagerov.com",
   },
   plugins: [
     {
       resolve: "gatsby-plugin-htaccess",
       options: {
+        RewriteBase: false,
         https: true,
         www: true,
         SymLinksIfOwnerMatch: true,
         redirect: [
-          `RewriteCond %{REQUEST_FILENAME} !-d`,
-          `RewriteCond %{REQUEST_URI} ^(.+)/$`,
-          `RewriteRule ^(.+)/$ http://www.drdianagerov.com/$1 [R=301,L]`,
+          "RewriteCond %{REQUEST_FILENAME} !-d",
+          "RewriteCond %{REQUEST_URI} ^(.+)/$",
+          "RewriteRule ^(.+)/$ http://www.drdianagerov.com/$1 [R=301,L]",
         ],
       },
     },
@@ -33,10 +34,10 @@ module.exports = {
       },
     },
     "gatsby-plugin-react-helmet",
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-sitemap`,
+    "gatsby-plugin-sass",
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         // CommonMark mode (default: true)
         commonmark: true,
@@ -49,16 +50,16 @@ module.exports = {
         // Plugins configs
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: "gatsby-remark-images",
           },
-          `gatsby-remark-lazy-load`,
+          "gatsby-remark-lazy-load",
         ],
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
+        name: "images",
         path: `${__dirname}/src/images`,
       },
     },
@@ -94,8 +95,8 @@ module.exports = {
           "site-logo",
           "testimonials",
           "working-hours",
-          `common-meta-data`,
-          `technology-page-seo`,
+          "common-meta-data",
+          "technology-page-seo",
         ],
         queryLimit: 1000,
       },
@@ -104,7 +105,7 @@ module.exports = {
     "gatsby-plugin-sharp",
 
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: "gatsby-starter-default",
         short_name: "Dr. Diana Gerov",

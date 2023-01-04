@@ -67,7 +67,7 @@ const FooterContact = () => (
             </Link>
 
             <div className="footer-copyright">
-              ©Copyright 2020. All rights reserved
+              ©Copyright {new Date.prototype.getFullYear()}. All rights reserved
             </div>
           </div>
           <div className="footer-location">

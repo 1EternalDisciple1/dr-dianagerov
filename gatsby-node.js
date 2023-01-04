@@ -1,18 +1,19 @@
-const path = require(`path`);
+const path = require(`path`)
 // const { paginate } = require('gatsby-awesome-pagination') ;
 
-const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
-  // Query for nodes to use in creating pages.
-  resolve(
-    graphql(request).then(result => {
-      if (result.errors) {
-        reject(result.errors)
-      }
+const makeRequest = (graphql, request) =>
+  new Promise((resolve, reject) => {
+    // Query for nodes to use in creating pages.
+    resolve(
+      graphql(request).then(result => {
+        if (result.errors) {
+          reject(result.errors)
+        }
 
-      return result;
-    })
-  )
-});
+        return result
+      })
+    )
+  })
 
 exports.onCreateWebpackConfig = ({ actions, loaders, getConfig }) => {
   const config = getConfig()
@@ -52,8 +53,8 @@ exports.onCreateWebpackConfig = ({ actions, loaders, getConfig }) => {
 
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
-exports.createPages = async  ({ actions, graphql }) => {
-  const { createPage } = actions;
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions
 
   const result = await graphql(
     `
@@ -79,9 +80,9 @@ exports.createPages = async  ({ actions, graphql }) => {
   }
   // ...
   // Create blog-list pages
-  const posts = result.data.allStrapiBlogArchives.edges;
-  const postsPerPage = 6;
-  const numPages = Math.ceil(posts.length / postsPerPage);
+  const posts = result.data.allStrapiBlogArchives.edges
+  const postsPerPage = 6
+  const numPages = Math.ceil(posts.length / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
@@ -95,13 +96,11 @@ exports.createPages = async  ({ actions, graphql }) => {
     })
   })
 
-
   // Create your paginated pages
 
-
-
-
-  const getService = makeRequest(graphql, `
+  const getService = makeRequest(
+    graphql,
+    `
     {
        allStrapiServices {
         edges {
@@ -111,7 +110,8 @@ exports.createPages = async  ({ actions, graphql }) => {
         }
       }
     }
-    `).then(result => {
+    `
+  ).then(result => {
     // Create pages for each article.
     result.data.allStrapiServices.edges.forEach(({ node }) => {
       createPage({
@@ -122,8 +122,10 @@ exports.createPages = async  ({ actions, graphql }) => {
         },
       })
     })
-  });
-  const getTeams = makeRequest(graphql, `
+  })
+  const getTeams = makeRequest(
+    graphql,
+    `
     {
       allStrapiTeams {
         edges {
@@ -133,7 +135,8 @@ exports.createPages = async  ({ actions, graphql }) => {
         }
       }
     }
-    `).then(result => {
+    `
+  ).then(result => {
     // Create pages for each article.
     result.data.allStrapiTeams.edges.forEach(({ node }) => {
       createPage({
@@ -144,8 +147,10 @@ exports.createPages = async  ({ actions, graphql }) => {
         },
       })
     })
-  });
-  const getArticle = makeRequest(graphql, `
+  })
+  const getArticle = makeRequest(
+    graphql,
+    `
     {
       allStrapiArticles {
         edges {
@@ -155,7 +160,8 @@ exports.createPages = async  ({ actions, graphql }) => {
         }
       }
     }
-    `).then(result => {
+    `
+  ).then(result => {
     // Create pages for each article.
     result.data.allStrapiArticles.edges.forEach(({ node }) => {
       createPage({
@@ -166,8 +172,10 @@ exports.createPages = async  ({ actions, graphql }) => {
         },
       })
     })
-  });
-  const getBlogPost = makeRequest(graphql, `
+  })
+  const getBlogPost = makeRequest(
+    graphql,
+    `
     {
       allStrapiBlogArchives {
         edges {
@@ -177,7 +185,8 @@ exports.createPages = async  ({ actions, graphql }) => {
         }
       }
     }
-    `).then(result => {
+    `
+  ).then(result => {
     // Create pages for each article.
     result.data.allStrapiBlogArchives.edges.forEach(({ node }) => {
       createPage({
@@ -188,8 +197,10 @@ exports.createPages = async  ({ actions, graphql }) => {
         },
       })
     })
-  });
-  const getBlogList = makeRequest(graphql, `
+  })
+  const getBlogList = makeRequest(
+    graphql,
+    `
     {
          allStrapiBlogArchives{
           edges {
@@ -199,7 +210,8 @@ exports.createPages = async  ({ actions, graphql }) => {
         }
         }
     }
-    `).then(result => {
+    `
+  ).then(result => {
     // Create pages for each article.
     result.data.allStrapiBlogArchives.edges.forEach(({ node }) => {
       createPage({
@@ -210,7 +222,7 @@ exports.createPages = async  ({ actions, graphql }) => {
         },
       })
     })
-  });
+  })
 
   // const blogListItem = graphql`
   // {
@@ -241,4 +253,4 @@ exports.createPages = async  ({ actions, graphql }) => {
     getBlogList,
     getBlogPost,
   ])
-};
+}

@@ -1,4 +1,5 @@
 module.exports = {
+  trailingSlash: "never",
   siteMetadata: {
     title: "Happy Smile Dental",
     titleTemplate: "%s | Dentist New Hyde Park: Dr. Diana Gerov - Near You",
@@ -11,20 +12,6 @@ module.exports = {
     siteUrl: "https://drdianagerov.com",
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-htaccess",
-      options: {
-        RewriteBase: false,
-        https: true,
-        www: true,
-        SymLinksIfOwnerMatch: true,
-        redirect: [
-          "RewriteCond %{REQUEST_FILENAME} !-d",
-          "RewriteCond %{REQUEST_URI} ^(.+)/$",
-          "RewriteRule ^(.+)/$ http://www.drdianagerov.com/$1 [R=301,L]",
-        ],
-      },
-    },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {

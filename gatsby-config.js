@@ -1,5 +1,4 @@
 module.exports = {
-  trailingSlash: "never",
   siteMetadata: {
     title: "Happy Smile Dental",
     titleTemplate: "%s | Dentist New Hyde Park: Dr. Diana Gerov - Near You",
@@ -53,9 +52,9 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.DEPLOY_URL
-          ? "https://happy-denta-smile.herokuapp.com"
-          : "http://localhost:1337",
+        // process.env.DEPLOY_URL
+        //   ? "http://localhost:1337"
+        apiURL: "https://happy-denta-smile.herokuapp.com",
         contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
           "advantages",

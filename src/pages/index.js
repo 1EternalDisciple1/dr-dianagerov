@@ -24,9 +24,9 @@ const IndexPage = ({ data }) => {
 
             <SEO seo={data.seo.SEO} />
             <SectionHeader />
-          <LazyLoad>
-            <SectionConditions />
-          </LazyLoad>
+          {/*<LazyLoad>*/}
+          {/*  <SectionConditions />*/}
+          {/*</LazyLoad>*/}
           <LazyLoad>
             <Description />
           </LazyLoad>

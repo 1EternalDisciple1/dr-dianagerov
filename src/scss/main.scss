@@ -1156,7 +1156,7 @@ button.swiper-pagination-bullet {
 
 .section-proposal {
   text-align: center;
-  padding-top: 0;
+  padding-top: 100px;
   padding-bottom: 100px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, .1);
 
@@ -2150,6 +2150,19 @@ button.swiper-pagination-bullet {
       background: lighten($color: $warning-color, $amount: 10%);
     }
   }
+}
+
+.section_current_promotions{
+  padding: 7rem 0 7rem;
+}
+.current_promotions_column{
+  flex-direction: column;
+  align-items: center;
+}
+
+.current_promotions{
+  text-align: center;
+  font: 700 26px/1.2 "Lato", Helvetica, Arial, sans-serif;
 }
 
 

@@ -1827,6 +1827,8 @@ button.swiper-pagination-bullet {
     padding: 0 16px;
     padding-right: 30px;
 
+
+
     @include mediaWidth_424 {
       padding-right: 0;
     }
@@ -1839,6 +1841,10 @@ button.swiper-pagination-bullet {
       color: #e58d1a;
       margin-bottom: 40px;
 
+    }
+
+    h2 {
+      font-size: 32px !important;
     }
 
     p {
@@ -2152,15 +2158,16 @@ button.swiper-pagination-bullet {
   }
 }
 
-.section_current_promotions{
+.section_current_promotions {
   padding: 7rem 0 7rem;
 }
-.current_promotions_column{
+
+.current_promotions_column {
   flex-direction: column;
   align-items: center;
 }
 
-.current_promotions{
+.current_promotions {
   text-align: center;
   font: 700 26px/1.2 "Lato", Helvetica, Arial, sans-serif;
 }

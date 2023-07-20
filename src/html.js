@@ -4,46 +4,49 @@ import PropTypes from "prop-types"
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
-    <head>
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DQYTHSNFS4"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-DQYTHSNFS4');`,
+          }}
+        />
 
-      <script dangerouslySetInnerHTML={{
-        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TQM55RH');</script>`
-      }} />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <link rel="canonical" href="https://drdianagerov.com/" />
+        {props.headComponents}
+      </head>
+      <body {...props.bodyAttributes}>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQM55RH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+          }}
+        />
 
-
-
-
-
-      <meta charSet="utf-8" />
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      <link rel="canonical" href="https://drdianagerov.com/"/>
-      {props.headComponents}
-    </head>
-    <body {...props.bodyAttributes}>
-    <noscript dangerouslySetInnerHTML={{
-      __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQM55RH"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>`
-    }}
-    />
-
-    {props.preBodyComponents}
-    <div
-      key={`body`}
-      id="___gatsby"
-      dangerouslySetInnerHTML={{ __html: props.body }}
-    />
-    {props.postBodyComponents}
-    <script type="application/ld+json" dangerouslySetInnerHTML={{
-        __html: `{
+        {props.preBodyComponents}
+        <div
+          key={`body`}
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: props.body }}
+        />
+        {props.postBodyComponents}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `{
           "@context": "https://schema.org",
           "@type": "Dentist",
           "name": "Happy Smiles Dental",
@@ -97,9 +100,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           }],
           "sameAs": "https://www.instagram.com/drdianagerov"
         }
-        </script>`
-      }} />
-    </body>
+        </script>`,
+          }}
+        />
+      </body>
     </html>
   )
 }

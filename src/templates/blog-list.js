@@ -28,7 +28,7 @@ export default class BlogList extends React.Component {
         <div className="container row">
         {posts.map(({ node }) => {
           const title = node.Title || node.id;
-          const content = node.Content;
+          const content = node.Content.slice(0,200);
           return(
             <div className="card_article" key={node.id}>
               <div className={`img_container`}>
@@ -37,7 +37,7 @@ export default class BlogList extends React.Component {
                 <h4 className="recent-posts__item-title">
                   <a href={`/blog/${node.slug}`}>{title}</a>
                 </h4>
-                <p>{content}</p>
+                <p>{content}...</p>
                 <div className="albus-blog__item-more">
                   <a href={`/blog/${node.slug}`}>Read more →</a>
                 </div>

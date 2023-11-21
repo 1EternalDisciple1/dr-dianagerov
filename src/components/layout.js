@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
-
+import {PopUp} from './PopUp/popUp';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-
+      <PopUp />
     <div className={`content_container`}>
       <Header />
       <main className={`site-main`}>{children}</main>
